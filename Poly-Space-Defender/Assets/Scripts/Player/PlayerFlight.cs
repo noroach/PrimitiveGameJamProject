@@ -3,8 +3,8 @@ using System.Collections;
 
 public class PlayerFlight : MonoBehaviour {
 
-    public float MovementSpeed = 1f;
-
+    public float MovementSpeed;
+	public float ForwardSpeed; // negatize it in code because i'm moving in negative z for some fucking reason
     public float InputDampeningHorizontal = 0f; // these 2 varibles are for interpolating between rotation angles in HandleRoatation()
     public float InputDampeningVertical = 0f;
 	public float InputSmothingFactor = 0.2f;
@@ -18,7 +18,7 @@ public class PlayerFlight : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position += (new Vector3(-Input.GetAxis("Horizontal"), Inverted * Input.GetAxis("Vertical"))) * MovementSpeed * Time.deltaTime;
+		transform.position += (new Vector3(-Input.GetAxis("Horizontal"), Inverted * Input.GetAxis("Vertical"), - ForwardSpeed)) * MovementSpeed * Time.deltaTime;
         HandleRotation();
 	}
 
@@ -39,4 +39,8 @@ public class PlayerFlight : MonoBehaviour {
 
 		transform.rotation = Quaternion.Euler(InputDampeningVertical * maxXrot, InputDampeningHorizontal * maxYrot, InputDampeningHorizontal * maxZrot);
     }
+
+	void HandleForwardMovement(){
+		
+	}
 }
