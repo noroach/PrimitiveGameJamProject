@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44695342, g: 0.496822, b: 0.5751054, a: 1}
+  m_IndirectSpecularColor: {r: 0.44695324, g: 0.49682164, b: 0.5751048, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ GameObject:
   - 33: {fileID: 29902632}
   - 65: {fileID: 29902631}
   - 23: {fileID: 29902630}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sides
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,6 +307,10 @@ Prefab:
     - target: {fileID: 4000011118764400, guid: 150d92b32f48671408b7522db8d9d9c3, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011500827146, guid: 150d92b32f48671408b7522db8d9d9c3, type: 2}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 150d92b32f48671408b7522db8d9d9c3, type: 2}
@@ -2239,7 +2243,7 @@ GameObject:
   - 33: {fileID: 398283217}
   - 65: {fileID: 398283216}
   - 23: {fileID: 398283215}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2318,7 +2322,7 @@ GameObject:
   - 33: {fileID: 652444808}
   - 136: {fileID: 652444807}
   - 23: {fileID: 652444806}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightBoost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2443,8 +2447,54 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011500827146, guid: 150d92b32f48671408b7522db8d9d9c3, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 150d92b32f48671408b7522db8d9d9c3, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &752556358
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000010509517166, guid: d5f69ec88958d054f80fa4b218df8913, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010509517166, guid: d5f69ec88958d054f80fa4b218df8913, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 10.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010509517166, guid: d5f69ec88958d054f80fa4b218df8913, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010509517166, guid: d5f69ec88958d054f80fa4b218df8913, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010509517166, guid: d5f69ec88958d054f80fa4b218df8913, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010509517166, guid: d5f69ec88958d054f80fa4b218df8913, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010509517166, guid: d5f69ec88958d054f80fa4b218df8913, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010509517166, guid: d5f69ec88958d054f80fa4b218df8913, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d5f69ec88958d054f80fa4b218df8913, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &760006666
 GameObject:
@@ -2533,7 +2583,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1042081410}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2570,7 +2620,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1048315189}
   - 114: {fileID: 1048315190}
-  m_Layer: 0
+  - 114: {fileID: 1048315191}
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2608,6 +2659,23 @@ MonoBehaviour:
   InputDampeningVertical: 0
   InputSmothingFactor: 0.2
   Inverted: 1
+--- !u!114 &1048315191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1048315188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c5f0d3301b9d7048800bbd47a5ea123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainGunDamage: 50
+  MainGunRateOfFire: 0.5
+  MainBulletPrefab: {fileID: 1000012999402050, guid: d5f69ec88958d054f80fa4b218df8913,
+    type: 2}
+  MainGunLeft: {fileID: 398283213}
+  MainGunRight: {fileID: 1922132241}
 --- !u!1 &1182474585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2619,7 +2687,7 @@ GameObject:
   - 33: {fileID: 1182474589}
   - 65: {fileID: 1182474588}
   - 23: {fileID: 1182474587}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2866,7 +2934,7 @@ GameObject:
   - 33: {fileID: 1922132245}
   - 65: {fileID: 1922132244}
   - 23: {fileID: 1922132243}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2945,7 +3013,7 @@ GameObject:
   - 33: {fileID: 2028499149}
   - 136: {fileID: 2028499148}
   - 23: {fileID: 2028499147}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftBoost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3026,7 +3094,7 @@ GameObject:
   - 33: {fileID: 2089180653}
   - 65: {fileID: 2089180652}
   - 23: {fileID: 2089180651}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FrontBig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3105,7 +3173,7 @@ GameObject:
   - 33: {fileID: 2100195179}
   - 65: {fileID: 2100195178}
   - 23: {fileID: 2100195177}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
