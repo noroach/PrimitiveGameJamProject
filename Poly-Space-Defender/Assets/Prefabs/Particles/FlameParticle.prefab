@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012131309198}
   - 33: {fileID: 33000011265999872}
-  - 65: {fileID: 65000012408729756}
   - 23: {fileID: 23000012099138764}
   - 108: {fileID: 108000012393700026}
   m_Layer: 0
@@ -53,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012232384974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.34, z: 3.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -109,18 +108,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010347119608}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65000012408729756
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010347119608}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!108 &108000012393700026
 Light:
   m_ObjectHideFlags: 1
@@ -130,7 +117,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 2
-  m_Color: {r: 0.77205884, g: 0.4951825, b: 0, a: 1}
+  m_Color: {r: 0.77205884, g: 0.43128803, b: 0, a: 1}
   m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
@@ -169,12 +156,10 @@ MonoBehaviour:
   FireCube: {fileID: 1000010347119608}
   speed: 0
   rotationRate: 0.15
-  decayTime: 0.5
+  decayTime: 0.3
   startSize: 0.3
   endSize: 1
   rotCountDown: 0
-  startAlbedo: {r: 1, g: 1, b: 1, a: 0}
-  endAlbedo: {r: 0.1544118, g: 0.1544118, b: 0.1544118, a: 1}
-  startEmission: {r: 0.5588235, g: 0.22585312, b: 0.045198973, a: 1}
-  endEmission: {r: 0.07352942, g: 0.046929073, b: 0.0070285457, a: 0.372}
+  StartMat: {fileID: 2100000, guid: 4ee41be4f21539c4f96050431db1266a, type: 2}
+  EndMat: {fileID: 2100000, guid: e009f23081d1dd347bd2d25094560474, type: 2}
   FireRenderer: {fileID: 23000012099138764}

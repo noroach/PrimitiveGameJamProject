@@ -21,6 +21,6 @@ public class Bullet : MonoBehaviour {
 	}
 
 	void Shoot () {
-		bullet.AddForce (transform.up * velocity, ForceMode.VelocityChange);
+		bullet.AddForce (transform.forward * velocity, ForceMode.VelocityChange);
 	}
 }

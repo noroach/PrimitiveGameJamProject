@@ -28,7 +28,7 @@ public class PlayerShooting : MonoBehaviour {
 		// when we instantiate we also need to set which layer the bullet is on
 		// because by default - they are enemy bullets
 		Vector3 LeftPos = new Vector3(transform.position.x,  transform.position.y, transform.position.z);
-		Quaternion bulletRot = Quaternion.Euler(transform.rotation.x - 90, transform.rotation.y, transform.rotation.z);
+		Quaternion bulletRot = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
 		Instantiate(MainBulletPrefab, MainGunLeft.transform.position, bulletRot);  //left bullet
 		Instantiate(MainBulletPrefab, MainGunRight.transform.position, bulletRot); //right bullet
 	}

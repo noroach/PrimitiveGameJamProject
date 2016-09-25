@@ -12,10 +12,8 @@ public class FlameParticle : MonoBehaviour {
 	public float endSize;
 	public float rotCountDown;
 
-	public Color startAlbedo;
-	public Color endAlbedo;
-	public Color startEmission;
-	public Color endEmission;
+	public Material StartMat;
+	public Material EndMat;
 
 	public MeshRenderer FireRenderer;
 
@@ -23,11 +21,8 @@ public class FlameParticle : MonoBehaviour {
 	void Start () {
 		rotCountDown = rotationRate;
 		FireCube.transform.localScale = new Vector3 (startSize, startSize, startSize);
-		// there are 2 different color values in the Flame material, Albedo and Emission, we want to Lerp both
 		//FireRenderer = FireCube.GetComponent<Renderer>();
-		Material FireMat = FireRenderer.material;
-		FireMat.color = startAlbedo;
-		FireMat.SetColor ("_EmissionColor", startEmission);
+		FireRenderer.material = StartMat;
 	}
 	
 	// Update is called once per frame
@@ -36,7 +31,7 @@ public class FlameParticle : MonoBehaviour {
 		transform.position = new Vector3 (transform.position.x, transform.position.y + speed * Time.deltaTime, transform.position.z);
 		Rotate ();
 		InterpolateSize ();
-		InterpolateColor ();
+		InterpolateMaterial ();
 	}
 
 	// checks if it should kill itself
@@ -64,12 +59,10 @@ public class FlameParticle : MonoBehaviour {
 		FireCube.transform.localScale = Vector3.Lerp (FireCube.transform.localScale, endScale, (1f / decayTime) * Time.deltaTime);
 	}
 
-	void InterpolateColor(){
-		Material FireMat = FireRenderer.material;
-		Color currentAlbedo = FireMat.color;
-		Color currentEmission = FireMat.GetColor ("_EmissionColor");
+	void InterpolateMaterial(){
+		float lerptime = (1f / decayTime * Time.deltaTime) * 2;
+		Material currentMat = FireRenderer.material;
 		// basically what we did ininterpolate size but for the material colors
-		FireMat.color = Color.Lerp(currentAlbedo,   endAlbedo,   (1f / decayTime) * Time.deltaTime); 
-		FireMat.SetColor ("_EmissionColor", (Color.Lerp(currentEmission, endEmission, (1f / decayTime) * Time.deltaTime)));
+		FireRenderer.material.Lerp(currentMat, EndMat, lerptime);
 	}
 }
