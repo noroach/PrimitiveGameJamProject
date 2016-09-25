@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerShooting : MonoBehaviour {
 
 	//gun stats, will take these from the global player settings
+	public float BulletSpeed;
 	public float MainGunDamage;
 	public float MainGunRateOfFire;
 	public GameObject MainBulletPrefab;
@@ -19,18 +20,27 @@ public class PlayerShooting : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown ("Fire1")){
+		if (Input.GetButton ("Fire1")){
 			MainFire ();
 		}
 	}
 
 	void MainFire(){
-		// when we instantiate we also need to set which layer the bullet is on
-		// because by default - they are enemy bullets
-		Vector3 LeftPos = new Vector3(transform.position.x,  transform.position.y, transform.position.z);
-		Quaternion bulletRot = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
-		Instantiate(MainBulletPrefab, MainGunLeft.transform.position, bulletRot);  //left bullet
-		Instantiate(MainBulletPrefab, MainGunRight.transform.position, bulletRot); //right bullet
+		GameObject TempBulletLeft;
+		GameObject TempBulletRight;
+		TempBulletLeft = Instantiate (MainBulletPrefab, MainGunLeft.transform.position, transform.rotation) as GameObject;
+		TempBulletRight = Instantiate (MainBulletPrefab, MainGunRight.transform.position, transform.rotation) as GameObject;
+
+		Rigidbody LeftBody;
+		Rigidbody RightBody;
+		LeftBody = TempBulletLeft.GetComponent<Rigidbody> ();
+		RightBody = TempBulletRight.GetComponent<Rigidbody> ();
+
+		LeftBody.AddForce (-transform.forward * BulletSpeed);
+		RightBody.AddForce (-transform.forward * BulletSpeed);
+
+		Destroy (TempBulletLeft, 5f);
+		Destroy (TempBulletRight, 5f);
 	}
 
 

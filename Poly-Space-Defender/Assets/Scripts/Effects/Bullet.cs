@@ -12,8 +12,8 @@ public class Bullet : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		bullet = gameObject.GetComponent<Rigidbody> ();
-		Shoot ();
+		//bullet = gameObject.GetComponent<Rigidbody> ();
+		//Shoot ();
 	}
 	
 	// Update is called once per frame

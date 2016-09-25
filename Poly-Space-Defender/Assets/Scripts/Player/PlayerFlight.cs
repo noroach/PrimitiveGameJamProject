@@ -27,7 +27,7 @@ public class PlayerFlight : MonoBehaviour {
     void HandleRotation() {
 		//these first varible are for the max rotation that the ship can lean given an input
 		float maxXrot = 20f;
-		float maxYrot = 10f;
+		float maxYrot = 40f;
 		float maxZrot = 45f;
 
         // esentially, the input moves closer to the new input intead of snapping to it

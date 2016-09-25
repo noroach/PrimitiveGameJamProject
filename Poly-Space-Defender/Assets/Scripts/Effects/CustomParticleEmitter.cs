@@ -32,7 +32,7 @@ public class CustomParticleEmitter : MonoBehaviour {
 	void SpawnParitcle(){
 		Vector3 p = transform.position; // its shorthand and looks better?
 		Vector3 randPos = new Vector3((Random.Range(p.x - Spread, p.x + Spread)) , (Random.Range(p.y - Spread, p.y + Spread)) , (Random.Range(p.z - Spread, p.z + Spread)));
-		Instantiate (CustomParticle, randPos, transform.rotation);
+		Instantiate (CustomParticle, randPos, Quaternion.Euler(Random.Range(0, 180), Random.Range(0, 180), Random.Range(0, 180)));
 		//newParticle.transform.SetParent (transform);
 	}
 }

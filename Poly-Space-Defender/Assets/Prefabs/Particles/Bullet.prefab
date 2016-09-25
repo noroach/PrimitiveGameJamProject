@@ -39,7 +39,6 @@ GameObject:
   - 136: {fileID: 136000011689382260}
   - 23: {fileID: 23000013301509288}
   - 54: {fileID: 54000012938984004}
-  - 114: {fileID: 114000010227347138}
   m_Layer: 8
   m_Name: Bullet
   m_TagString: Untagged
@@ -55,7 +54,7 @@ Transform:
   m_GameObject: {fileID: 1000012999402050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 10.07, z: 2.48}
-  m_LocalScale: {x: 0.1, y: 0.02, z: 2}
+  m_LocalScale: {x: 0.25, y: 0.1, z: 2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000011417735690}
@@ -68,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011407237580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -81,7 +80,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012999402050}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -159,21 +158,6 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114000010227347138
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012999402050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1729636c67370b64495a7a14618d6a9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 54000012938984004}
-  velocity: 50
-  PlayerBulletMat: {fileID: 2100000, guid: 2315389a20ce9a144b170e324b1a9b5d, type: 2}
-  EnemyBulletMat: {fileID: 2100000, guid: 518fb02d9316bc84bb39d17449fc3970, type: 2}
 --- !u!136 &136000011689382260
 CapsuleCollider:
   m_ObjectHideFlags: 1
